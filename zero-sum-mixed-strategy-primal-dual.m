@@ -20,7 +20,7 @@ for iter = 1:90000
 	actionCount2(j, 1) = actionCount2(j, 1) +  1; 
 	
 	x = actionCount1 / sum(iter); 
-	    y = actionCount2 / sum(iter); 
+	y = actionCount2 / sum(iter); 
 	
 	x_all = [x_all x]; 
 	y_all = [y_all y]; 
