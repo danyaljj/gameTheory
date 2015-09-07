@@ -4,6 +4,7 @@ A = [4 3 1 4; 2 5 6 3; 1 0 7 0];
 % A = [0 5 -2; -3 0 4; 6 -4 0]; 
 % A = [6 8 3 1 6; 4 2 6 3 5; 2 4 6 4 1; 1 3 2 5 3]; 
 
+% to compute the distribution over actions of the second player we can just negate-transpose the payoff matrix. 
 % A = -A'; 
 
 n = size(A,1); 
@@ -11,7 +12,7 @@ m = size(A,2);
 
 totalMaxVal = max(max(abs(A))); 
 
-% compute the first LP 
+% compute the parameters of the LP  
 f = [zeros(n,1); -1]; 
 C = [-A' ones(m, 1)]; 
 b = [zeros(m, 1)]; 
