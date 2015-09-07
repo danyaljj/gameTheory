@@ -16,30 +16,17 @@ actionCount2 = zeros(m, 1);
 x_all = []; 
 y_all = []; 
 for iter = 1:90000
-    %actionCount1
-    %actionCount2
-    %i 
-    %j 
 	actionCount1(i, 1) = actionCount1(i, 1) +  1; 
 	actionCount2(j, 1) = actionCount2(j, 1) +  1; 
 	
-	%assert( sum(actionCount1) == sum(actionCount2) ) 
-	
-	%size(actionCount1) 
-	%size(actionCount2)
-	
-	%actionCount1' * A
-	%A * actionCount2
-	
 	x = actionCount1 / sum(iter); 
-    y = actionCount2 / sum(iter); 
+	    y = actionCount2 / sum(iter); 
 	
 	x_all = [x_all x]; 
 	y_all = [y_all y]; 
 	
 	[valMax,i] = max( A * y  ); 
 	[valMin,j] = min( x' * A ); 
-	
 end 
 
 figure(1);  plot(1:iter, x_all);  
@@ -53,7 +40,3 @@ title('Player 2, mixed strategy');
 xlabel('iteration');
 ylabel('action distribution');
 print -dpdf player2.pdf
-
-size(x_all)
-size(y_all)
-
